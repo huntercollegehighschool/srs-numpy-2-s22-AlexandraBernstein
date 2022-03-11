@@ -10,10 +10,8 @@ Below you are given the stock prices (there are only 4 days in this example). Fi
 
 acme = [10, 11.5, 11, 10, 12]
 import numpy as np
-a = np.array(acme)
-day1 = a[0:2]
-day2 = a[1:3]
-day3 = a[2:4]
-day4 = a[3:5]
-
-print(100*(day1[1]-day1[0])/day1[0])
+acme = np.array(acme)
+today = acme[1:]  # from index 1 to end
+previous = acme[:4]  # start at beginning, go up to but not include index 4
+pcd = 100 * (today - previous)/previous  
+print(pcd)
